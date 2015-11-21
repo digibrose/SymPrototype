@@ -48,7 +48,7 @@ public class SymProto extends JPanel {
 
     /**
      * Method to setup the MainGui on startup
-     * @param QuestionList
+     * @param QuestionList test
      */
 
     public SymProto(final LinkedList<Question> QuestionList){
