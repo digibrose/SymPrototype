@@ -85,6 +85,7 @@ public class SymProto extends JPanel {
 
         /**
          * Set up the Panel1 - Question Panel
+         * 
          */
 
         Panel1 = new JPanel();
