@@ -80,6 +80,7 @@ class ImageMover extends MouseInputAdapter
          */
 
         Point p = e.getPoint();
+        System.out.println(p);
         if(!setActivePanel(p))
             return;
 
@@ -168,7 +169,7 @@ class ImageMover extends MouseInputAdapter
             c1 = new Rectangle();
         for (int i = 0; i<SymHooks.length; i++) {
             c1.setBounds(SymHooks[i].getBounds());
-            c1.setLocation(c1.x, c1.y + p1.getHeight());
+       //     c1.setLocation(c1.x, c1.y + p1.getHeight());
             if (activePanel.equals(p3) && (c1.contains(p))) {
                 activePanel.add(selectedComponent);
                 Rectangle r = activePanel.getBounds();

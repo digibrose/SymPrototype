@@ -120,10 +120,21 @@ public class Question {
      */
 
     public boolean CheckAnswer(Component[] Ans){
+
+        /**
+         * Y offset comes from the 2 panels above as the component pos is internal to the panel andthe hooks are global
+         * to align with the points for mouse moving
+         */
+
+        Rectangle[] AnsCopy = new Rectangle[Ans.length];
+        for (int l = 0; l<Ans.length;l++){
+            AnsCopy[l] = new Rectangle(Ans[l].getX(), Ans[l].getY() + 300, Ans[l].getWidth(), Ans[l].getHeight());
+        }
+
         AnswerChecker = new boolean[SymHooks.length];
             for (int i = 0; i < SymHooks.length; i++) {
                 for (int j = 0; j < Ans.length; j++) {
-                    if (SymHooks[i].intersects(Ans[j].getBounds()) && Answer[j] == Integer.parseInt(Ans[j].getName())){
+                    if (SymHooks[i].intersects(AnsCopy[j].getBounds()) && Answer[j] == Integer.parseInt(Ans[j].getName())){
                     AnswerChecker[i] = true;
                 }
             }

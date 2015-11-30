@@ -24,6 +24,8 @@ public class SymProto extends JPanel {
 
     private JPanel GlassPanel;
 
+    private JPanel OpPanel;
+
 
     /**
      * Declaration of Submit Button
@@ -85,7 +87,7 @@ public class SymProto extends JPanel {
 
         /**
          * Set up the Panel1 - Question Panel
-         * 
+         *
          */
 
         Panel1 = new JPanel();
@@ -119,6 +121,24 @@ public class SymProto extends JPanel {
 
         LP1.add(Panel1, gbc1, 2);
 
+        /**
+         * Set up the operator input panel
+         */
+
+        OpPanel = new JPanel();
+        GridBagConstraints gbcOp = new GridBagConstraints();
+        OpPanel.setLayout(null);
+        gbcOp.gridx = 0;
+        gbcOp.gridy = 1;
+        gbcOp.weighty = 0.25;
+        gbcOp.weightx = 0;
+        gbcOp.gridwidth = 2;
+        gbcOp.gridheight = 1;
+        gbcOp.fill = GridBagConstraints.BOTH;
+        OpPanel.setPreferredSize(new Dimension(663, 150));
+        LP1.add(OpPanel, gbcOp, 2);
+
+
 /**
  * Will at some point be an extra Panel
  *
@@ -143,7 +163,7 @@ public class SymProto extends JPanel {
         Panel3.setLayout(null);
         Panel3.setPreferredSize(new Dimension(692, 519));
         gbc3.gridx = 0;
-        gbc3.gridy = 1;
+        gbc3.gridy = 2;
         gbc3.weighty = 0.75;
         gbc3.weightx = 0.7;
         gbc3.fill = GridBagConstraints.BOTH;
@@ -157,7 +177,7 @@ public class SymProto extends JPanel {
         GridBagConstraints gbc4 = new GridBagConstraints();
         Panel4.setPreferredSize(new Dimension(303, 519));
         gbc4.gridx = 1;
-        gbc4.gridy = 1;
+        gbc4.gridy = 2;
         gbc4.weighty = 0.75;
         gbc4.weightx = 0.3;
         gbc4.fill = GridBagConstraints.BOTH;
@@ -177,7 +197,7 @@ public class SymProto extends JPanel {
         gbc5.weightx = 1.0;
         gbc5.weighty = 1.0;
         gbc5.gridwidth = 2;
-        gbc5.gridheight = 2;
+        gbc5.gridheight = 3;
         GlassPanel.setOpaque(false);
 
         /**
@@ -199,7 +219,7 @@ public class SymProto extends JPanel {
         WasteBin.setOpaque(true);
         WasteBin.setName("WasteBox");
         GlassPanel.add(WasteBin);
-        WasteBin.setBounds(10, 160, 100, 100);
+        WasteBin.setBounds(10, 330, 100, 100);
 
         /**
          * Setup a submit button to progress to new questions
@@ -210,7 +230,7 @@ public class SymProto extends JPanel {
         Submit.setFont(new Font("Ariel", Font.LAYOUT_LEFT_TO_RIGHT, 24));
         Submit.setCursor(new Cursor(Cursor.HAND_CURSOR));
         Submit.setPreferredSize(new Dimension(200, 100));
-        Submit.setBounds(740, 560, 200, 100);
+        Submit.setBounds(740, 550, 200, 100);
         Submit.setText("Submit");
         Submit.setBackground(Color.ORANGE);
         Submit.setOpaque(true);
@@ -256,10 +276,10 @@ public class SymProto extends JPanel {
     public static void main(String[] args) {
 
         Rectangle[] SymHooks = new Rectangle[4];
-        SymHooks[0] = new Rectangle(242, 197 -150, 50, 50);
-        SymHooks[1] = new Rectangle(74, 561 -150,50, 50);
-        SymHooks[2] = new Rectangle(584, 197 -150, 50, 50);
-        SymHooks[3] = new Rectangle(419, 561 -150, 50, 50);
+        SymHooks[0] = new Rectangle(242, 197 +150, 50, 50);
+        SymHooks[1] = new Rectangle(74, 561 +150,50, 50);
+        SymHooks[2] = new Rectangle(584, 197 +150, 50, 50);
+        SymHooks[3] = new Rectangle(419, 561 +150, 50, 50);
         Rectangle[] SymHooks2 = new Rectangle[4];
         SymHooks2[0] = new Rectangle(506, 563 -150, 50, 50);
         SymHooks2[1] = new Rectangle(149, 564 -150, 50, 50);
