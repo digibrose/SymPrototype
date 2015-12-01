@@ -1,3 +1,5 @@
+import com.sun.java.swing.plaf.motif.MotifBorders;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -101,6 +103,7 @@ public class SymProto extends JPanel {
         gbc1.gridheight = 1;
         gbc1.fill = GridBagConstraints.BOTH;
         Panel1.setPreferredSize(new Dimension(663, 150));
+        Panel1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
 
 
         /**
@@ -136,7 +139,57 @@ public class SymProto extends JPanel {
         gbcOp.gridheight = 1;
         gbcOp.fill = GridBagConstraints.BOTH;
         OpPanel.setPreferredSize(new Dimension(663, 150));
+        OpPanel.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         LP1.add(OpPanel, gbcOp, 2);
+
+        /**
+         * Set up the text boxes for writing operators
+         */
+
+        JLabel FE = new JLabel();
+        FE.setBounds(10, 10, 120, 20);
+        FE.setText("First Element");
+        FE.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        JLabel SE = new JLabel();
+        SE.setBounds(10, 50, 120, 20);
+        SE.setText("Second Element");
+        SE.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        JLabel Operator = new JLabel();
+        Operator.setBounds(10, 90, 120, 20);
+        Operator.setText("Operator");
+        Operator.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        JTextField FE1 = new JTextField();
+        FE1.setBounds(140, 170, 120, 20);
+        FE1.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        FE1.setEnabled(false);
+        FE1.setBackground(Color.GRAY);
+        JTextField SE1 = new JTextField();
+        SE1.setBounds(140, 210, 120, 20);
+        SE1.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        SE1.setEnabled(false);
+        SE1.setBackground(Color.GRAY);
+        JTextField Op1 = new JTextField();
+        Op1.setBounds(140, 250, 120, 20);
+        Op1.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        Op1.setEnabled(false);
+        Op1.setBackground(Color.GRAY);
+        JTextField Op2 = new JTextField();
+        Op2.setBounds(280, 250, 120, 20);
+        Op2.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        Op2.setEnabled(false);
+        Op2.setBackground(Color.GRAY);
+        JTextField Op3 = new JTextField();
+        Op3.setBounds(420, 250, 120, 20);
+        Op3.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        Op3.setEnabled(false);
+        Op3.setBackground(Color.GRAY);
+
+        OpPanel.add(FE);
+        OpPanel.add(SE);
+        OpPanel.add(Operator);
+
+
+
 
 
 /**
@@ -204,10 +257,16 @@ public class SymProto extends JPanel {
          * Add a Mouse Input Adapter, mover to the glass panel
          */
 
-        final ImageMover mover = new ImageMover(Panel4, Panel1, Panel2, Panel3, GlassPanel, ActiveQuestion);
+        final ImageMover mover = new ImageMover(Panel4, Panel1, OpPanel, Panel3, GlassPanel, ActiveQuestion);
         GlassPanel.addMouseListener(mover);
         GlassPanel.addMouseMotionListener(mover);
         LP1.add(GlassPanel, gbc5, 0);
+
+        GlassPanel.add(FE1);
+        GlassPanel.add(SE1);
+        GlassPanel.add(Op1);
+        GlassPanel.add(Op2);
+        GlassPanel.add(Op3);
 
 
         /**

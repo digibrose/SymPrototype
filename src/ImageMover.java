@@ -15,7 +15,7 @@ class ImageMover extends MouseInputAdapter
      */
 
     private ImagePanel Imp;
-    private JPanel p1, p2;
+    private JPanel p1, Op;
     private SymImage p3;
     private JPanel glassPanel;
     private JPanel activePanel;
@@ -36,17 +36,17 @@ class ImageMover extends MouseInputAdapter
      * Constructor for ImageMover taking in all the panels, the glass panel and the question
      * @param Imp
      * @param p1
-     * @param p2
+     * @param Op
      * @param p3
      * @param gp
      * @param Question
      */
 
-    public ImageMover(ImagePanel Imp, JPanel p1, JPanel p2, SymImage p3, JPanel gp, Question Question)
+    public ImageMover(ImagePanel Imp, JPanel p1, JPanel Op, SymImage p3, JPanel gp, Question Question)
     {
         this.Imp = Imp;
         this.p1 = p1;
-        this.p2 = p2;
+        this.Op = Op;
         this.p3 = p3;
         glassPanel = gp;
         offset = new Point();
@@ -55,7 +55,7 @@ class ImageMover extends MouseInputAdapter
         this.SymHooks = Question.getSymHooks();
         dropflag = false;
         this.Symlab = Question.getSymLabels();
-        WasteBox = new Rectangle(16, 167, 100, 100);
+        WasteBox = new Rectangle(16, 330, 100, 100);
     }
 
     /**
@@ -211,7 +211,7 @@ class ImageMover extends MouseInputAdapter
             }
 
         /**
-         * if not dropeed then return to original position
+         * if not dropped then return to original position
          */
 
             if (!dropflag) {
@@ -284,6 +284,9 @@ class ImageMover extends MouseInputAdapter
         r = p1.getBounds();
         if(r.contains(p))
             activePanel = p1;
+        r = Op.getBounds();
+        if(r.contains(p))
+            activePanel = Op;
         r = p3.getBounds();
         if(r.contains(p))
             activePanel = p3;
